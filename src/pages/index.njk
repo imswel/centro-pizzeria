@@ -1,0 +1,21 @@
+---
+permalink: "index.html"
+---
+
+{% extends "layouts/base.njk" %}
+{% set htmlTitle ="Centro Pizza" %}
+{% set currentSection ="home" %}
+
+{% block pagecontent %}
+
+  {% include "partials/header.njk" %}
+
+  {% include "partials/delivery.njk" %}
+
+  {% include "partials/menu.njk" %}
+
+  {% include "partials/reservation.njk" %}
+
+  {% include "partials/parallax-photo.njk" %}
+
+{% endblock %}

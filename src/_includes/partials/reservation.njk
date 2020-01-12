@@ -1,0 +1,71 @@
+<section id="reservation" class="c-reserve">
+  <div class="o-container">
+    <h1 class="c-title c-reserve__title">Reserver une table</h1>
+    <div class="c-reserve__content">
+
+      <div class="c-reserve__info">
+        <div class="c-reserve__info__address">
+          <h2 class="c-subtitle c-reserve__subtitle">Adresse</h2>
+          <p class="c-txt">
+            Boulevard Anspach 93, 1000 Bruxelles<br/>
+            Tél. : +32 2 584 56 54<br/>
+            Mail : info@centropizza.be 
+          </p>
+        </div>
+        <div class="c-reserve__info__maps">
+          <h2 class="c-subtitle c-reserve__subtitle">Carte</h2>
+          <div id="map">
+            <!-- Script Mapbox -->
+            <script src="/assets/js/mapbox.js"></script>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-form">
+        <form>
+          <div class="c-form__flex--desktop">
+            <div class="c-form__firstname">
+              <label class="c-txt c-txt--form">Prénom :</label><br/>
+              <input type="text" name="firstname" placeholder="Votre prénom..">
+            </div>
+            <div class="c-form__lastname">
+              <label class="c-txt c-txt--form">Nom :</label><br/>
+              <input type="text" name="lastname" placeholder="Votre nom..">
+            </div>
+          </div>
+          <div class="c-form__mail">
+            <label class="c-txt c-txt--form">Adresse e-mail :</label><br/>
+            <input type="text" name="email" placeholder="Votre adresse e-mail..">
+          </div>
+          <div class="c-form__tel">
+            <label class="c-txt c-txt--form">Numéro de téléphone :</label><br/>
+            <input type="text" name="tel" placeholder="Votre numéro de téléphone..">
+          </div>
+          <div class="c-form__flex">
+            <div class="c-form__date">
+              <label class="c-txt c-txt--form">Date :</label><br/>
+              <input id="today" type="date" name="date">
+            </div>
+            <div class="c-form__hour">
+              <label class="c-txt c-txt--form">Midi/Soir :</label><br/>
+              <select name="hours">
+                <option value="1" >Midi</option>
+                <option value="2">Soir</option>
+              </select>
+            </div>
+          </div>
+          <div class="c-form__people">
+            <label class="c-txt c-txt--form">Nombre de couverts :</label><br/>
+            <input type="number" min="0" name="num-peoples" value="1">
+          </div>
+          <input class="c-btn" type="submit" value="Réserver maintenant">
+        </form>
+      </div>
+      <!-- Script Select -->
+      <script src="/assets/js/select.js"></script>
+
+    </div>
+    
+    
+  </div>
+</section>

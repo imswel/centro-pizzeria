@@ -1,0 +1,82 @@
+{% extends "layouts/base.njk" %}
+{% set htmlTitle = title %}
+{% set currentSection ="pizza" %}
+
+{% block pagecontent %}
+  <section class="c-pizzaheader">
+    <picture class="o-fluidimg">
+      <source media="all and (min-width: 1024px)"
+      srcset="/assets/img/2048/{{ picture }}">
+      <source media="all and (min-width: 720px)"
+      srcset="/assets/img/1024/{{ picture }}">
+      <img class="o-fluidimg" src="/assets/img/720/{{ picture }}"/>
+    </picture>
+    <div class="o-container">
+
+      {% if spicy == true %}
+        <div class="c-pizza__spicy">
+          {% if spicylevel == 1 %}
+            <div class="spicy">{% include "partials/svg/svg-spicy.njk" %}</div>
+            <div class="spicy spicy--false">{% include "partials/svg/svg-spicy.njk" %}</div>
+            <div class="spicy spicy--false">{% include "partials/svg/svg-spicy.njk" %}</div>
+          {% elif spicylevel == 2 %}
+            <div class="spicy">{% include "partials/svg/svg-spicy.njk" %}</div>
+            <div class="spicy">{% include "partials/svg/svg-spicy.njk" %}</div>
+            <div class="spicy spicy--false">{% include "partials/svg/svg-spicy.njk" %}</div>
+          {% else %}
+            <div class="spicy">{% include "partials/svg/svg-spicy.njk" %}</div>
+            <div class="spicy">{% include "partials/svg/svg-spicy.njk" %}</div>
+            <div class="spicy">{% include "partials/svg/svg-spicy.njk" %}</div>
+          {% endif %}
+        </div>
+      {% endif %}
+      
+      <div class="c-pizza__info">
+        <div class="c-pizza__mobileinfo">
+          <p class="c-pizza__info__price">{{ price }}</p>
+          <h1 class="c-pizza__info__title">{{ title }}</h1>
+          <div class="c-pizza__info__rating">
+            {% if rating == 1 %}
+              <div class="star">{% include "partials/svg/svg-star.njk" %}</div>
+              <div class="star star--false">{% include "partials/svg/svg-star.njk" %}</div>
+              <div class="star star--false">{% include "partials/svg/svg-star.njk" %}</div>
+              <div class="star star--false">{% include "partials/svg/svg-star.njk" %}</div>
+              <div class="star star--false">{% include "partials/svg/svg-star.njk" %}</div>
+            {% elif rating == 2 %}
+              <div class="star">{% include "partials/svg/svg-star.njk" %}</div>
+              <div class="star">{% include "partials/svg/svg-star.njk" %}</div>
+              <div class="star star--false">{% include "partials/svg/svg-star.njk" %}</div>
+              <div class="star star--false">{% include "partials/svg/svg-star.njk" %}</div>
+              <div class="star star--false">{% include "partials/svg/svg-star.njk" %}</div>
+            {% elif rating == 3 %}
+              <div class="star">{% include "partials/svg/svg-star.njk" %}</div>
+              <div class="star">{% include "partials/svg/svg-star.njk" %}</div>
+              <div class="star">{% include "partials/svg/svg-star.njk" %}</div>
+              <div class="star star--false">{% include "partials/svg/svg-star.njk" %}</div>
+              <div class="star star--false">{% include "partials/svg/svg-star.njk" %}</div>
+            {% elif rating == 4 %}
+              <div class="star">{% include "partials/svg/svg-star.njk" %}</div>
+              <div class="star">{% include "partials/svg/svg-star.njk" %}</div>
+              <div class="star">{% include "partials/svg/svg-star.njk" %}</div>
+              <div class="star">{% include "partials/svg/svg-star.njk" %}</div>
+              <div class="star star--false">{% include "partials/svg/svg-star.njk" %}</div>
+            {% else %}
+              <div class="star">{% include "partials/svg/svg-star.njk" %}</div>
+              <div class="star">{% include "partials/svg/svg-star.njk" %}</div>
+              <div class="star">{% include "partials/svg/svg-star.njk" %}</div>
+              <div class="star">{% include "partials/svg/svg-star.njk" %}</div>
+              <div class="star">{% include "partials/svg/svg-star.njk" %}</div>
+            {% endif %}
+          </div>
+          <p class="c-pizza__info__desc c-pizza__info__desc--mobile">" {{ desc }} "</p>
+          <h2 class="c-pizza__info__subtitle">Ingredient :</h2>
+          <p class="c-pizza__info__desc">{{ ingredients }}</p>
+          <a class="c-btn c-pizza__info__btn">Commander</a>
+        </div>
+        <p class="c-pizza__info__desc c-pizza__info__desc--desktop">" {{ desc }} "</p>
+      </div>
+      
+
+    </div>
+  </section>
+{% endblock %}

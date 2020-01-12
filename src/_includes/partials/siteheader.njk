@@ -1,0 +1,66 @@
+{% if currentSection ==  "pizza" %}
+  <div class="c-navbar c-navbar--alt">
+{% else %}
+  <div class="c-navbar 
+  {% if currentSection =='home' %}
+    js-navbar
+  {% endif %}">
+{% endif %}
+    <header class="c-siteheader">
+      <div class="o-container">
+
+        <div class="c-siteheader__logo">
+          <a href="/index.html">
+            {% include "partials/svg/svg-logo.njk" %}
+          </a>
+        </div>
+
+        <nav class="c-siteheader__mainnav">
+          {% for navitem in mainnav %}
+            {% if loop.first %}<ul class="c-mainnav">{% endif %}
+            <li class="c-mainnav__item"><a class="c-mainnav__link" href="{{ navitem.url }}">{{ navitem.label }}</a></li>
+            {% if loop.last %}</ul>{% endif %}
+          {% endfor %}
+        </nav>
+
+        <nav class="c-siteheader__mobilenav">
+          <a class="js-menu">
+            <div class="c-mobilenav__ham__icon">
+                {% include "partials/svg/svg-ham.njk" %}
+            </div>
+          </a>
+        </nav>
+        
+        <div class="c-mobilenav js-mobilemenu">
+          <div class="o-container">
+            
+            <div class="c-mobileheader
+                        {% if currentSection == 'pizza' %}
+                          c-mobileheader--right
+                        {% endif %}">
+
+              {% if currentSection ==  "home" %}
+                <div class="c-mobilenav__logo">
+                  <a href="/index.html">
+                    {% include "partials/svg/svg-logo.njk" %}
+                  </a>
+                </div>
+              {% endif %}
+
+            </div>
+
+            {% for navitem in mainnav %}
+              {% if loop.first %}<ul class="c-mobilemenu">{% endif %}
+                <li><a href="{{ navitem.url }}" class="c-mobilemenu__link" onClick="closeMenu()">{{ navitem.label }}</a></li>
+              {% if loop.last %}</ul>{% endif %}
+            {% endfor %}
+      
+          </div>
+        </div>
+        
+        <!--script menu-->
+        <script src="/assets/js/mobile-nav.js"></script>
+
+      </div>
+    </header>
+  </div>

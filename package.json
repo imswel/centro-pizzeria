@@ -1,0 +1,20 @@
+{
+  "name": "centro-pizzeria",
+  "version": "1.0.0",
+  "description": "Pizzeria Centro",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deleteDist": "del-cli ./dist",
+    "build": "npm run deleteDist && npx eleventy",
+    "serve": "npx eleventy --serve --quiet"
+  },
+  "keywords": [],
+  "author": "Samuel Gillard",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.9.0",
+    "del-cli": "^3.0.0",
+    "netlify-cli": "^2.27.0"
+  }
+}

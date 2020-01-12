@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{{htmlTitle}}</title>
+  <link rel="icon" href="/assets/img/icon/favicon.ico" />
+  <link href="/assets/css/google-fonts.css" rel="stylesheet"> 
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/fontawesome.js" crossorigin="anonymous"></script>
+  <script src='/assets/js/mapbox-gl.js'></script>
+  <link href='/assets/css/mapbox-gl.css' rel='stylesheet' />
+  <script src="/assets/js/simpleParallax.min.js"></script>
+</head>
+<body>
+  {% include "partials/siteheader.njk" %}
+  {% block pagecontent %}{% endblock %}
+  {% include "partials/sitefooter.njk" %}
+</body>
+</html>

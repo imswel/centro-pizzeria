@@ -1,0 +1,160 @@
+<main id="menu" class="c-menu">
+  <div class="o-container o-container--menu">
+    <h1 class="c-title c-title--dark">Menu</h1>
+    
+    <div class="c-menu__cards">
+
+      {% for entry in collections.pizza %}
+        <div class="c-card">
+
+          <div class="c-card__picture">
+            <img src="/assets/img/1024/{{ entry.data.picture }}" alt="{{ entry.data.title }}">
+          </div>
+
+          {% if entry.data.spicy == true %}
+            <div class="c-card__spicy">
+              {% if entry.data.spicylevel == 1 %}
+                <div class="spicy">{% include "partials/svg/svg-spicy.njk" %}</div>
+                <div class="spicy spicy--false">{% include "partials/svg/svg-spicy.njk" %}</div>
+                <div class="spicy spicy--false">{% include "partials/svg/svg-spicy.njk" %}</div>
+              {% elif entry.data.spicylevel == 2 %}
+                <div class="spicy">{% include "partials/svg/svg-spicy.njk" %}</div>
+                <div class="spicy">{% include "partials/svg/svg-spicy.njk" %}</div>
+                <div class="spicy spicy--false">{% include "partials/svg/svg-spicy.njk" %}</div>
+              {% else %}
+                <div class="spicy">{% include "partials/svg/svg-spicy.njk" %}</div>
+                <div class="spicy">{% include "partials/svg/svg-spicy.njk" %}</div>
+                <div class="spicy">{% include "partials/svg/svg-spicy.njk" %}</div>
+              {% endif %}
+            </div>
+          {% endif %}
+
+          <div class="c-card__info">
+            <p class="c-pizza__price 
+                      {% if entry.data.spicy == true%}
+                        c-pizza__price--spicy
+                      {% endif %}">{{ entry.data.price }}</p>
+            <h3 class="c-pizza__name">{{ entry.data.title }}</h3>
+
+            <div class="c-pizza__rating">
+              {% if entry.data.rating == 1 %}
+                <div class="star">{% include "partials/svg/svg-star.njk" %}</div>
+                <div class="star star--false">{% include "partials/svg/svg-star.njk" %}</div>
+                <div class="star star--false">{% include "partials/svg/svg-star.njk" %}</div>
+                <div class="star star--false">{% include "partials/svg/svg-star.njk" %}</div>
+                <div class="star star--false">{% include "partials/svg/svg-star.njk" %}</div>
+              {% elif entry.data.rating == 2 %}
+                <div class="star">{% include "partials/svg/svg-star.njk" %}</div>
+                <div class="star">{% include "partials/svg/svg-star.njk" %}</div>
+                <div class="star star--false">{% include "partials/svg/svg-star.njk" %}</div>
+                <div class="star star--false">{% include "partials/svg/svg-star.njk" %}</div>
+                <div class="star star--false">{% include "partials/svg/svg-star.njk" %}</div>
+              {% elif entry.data.rating == 3 %}
+                <div class="star">{% include "partials/svg/svg-star.njk" %}</div>
+                <div class="star">{% include "partials/svg/svg-star.njk" %}</div>
+                <div class="star">{% include "partials/svg/svg-star.njk" %}</div>
+                <div class="star star--false">{% include "partials/svg/svg-star.njk" %}</div>
+                <div class="star star--false">{% include "partials/svg/svg-star.njk" %}</div>
+              {% elif entry.data.rating == 4 %}
+                <div class="star">{% include "partials/svg/svg-star.njk" %}</div>
+                <div class="star">{% include "partials/svg/svg-star.njk" %}</div>
+                <div class="star">{% include "partials/svg/svg-star.njk" %}</div>
+                <div class="star">{% include "partials/svg/svg-star.njk" %}</div>
+                <div class="star star--false">{% include "partials/svg/svg-star.njk" %}</div>
+              {% else %}
+                <div class="star">{% include "partials/svg/svg-star.njk" %}</div>
+                <div class="star">{% include "partials/svg/svg-star.njk" %}</div>
+                <div class="star">{% include "partials/svg/svg-star.njk" %}</div>
+                <div class="star">{% include "partials/svg/svg-star.njk" %}</div>
+                <div class="star">{% include "partials/svg/svg-star.njk" %}</div>
+              {% endif %}
+            </div>
+            <a href="{{ entry.url }}" class="c-card__btn">Commander</a>
+          </div>
+
+        </div>
+      {% endfor %}
+
+    </div>
+
+    <div class="c-mobilemenu__cards siema">
+
+      {% for entry in collections.pizza %}
+        <div class="c-card">
+
+          <div class="c-card__picture">
+            <img src="/assets/img/1024/{{ entry.data.picture }}" alt="{{ entry.data.title }}">
+          </div>
+
+          {% if entry.data.spicy == true %}
+            <div class="c-card__spicy">
+              {% if entry.data.spicylevel == 1 %}
+                <div class="spicy">{% include "partials/svg/svg-spicy.njk" %}</div>
+                <div class="spicy spicy--false">{% include "partials/svg/svg-spicy.njk" %}</div>
+                <div class="spicy spicy--false">{% include "partials/svg/svg-spicy.njk" %}</div>
+              {% elif entry.data.spicylevel == 2 %}
+                <div class="spicy">{% include "partials/svg/svg-spicy.njk" %}</div>
+                <div class="spicy">{% include "partials/svg/svg-spicy.njk" %}</div>
+                <div class="spicy spicy--false">{% include "partials/svg/svg-spicy.njk" %}</div>
+              {% else %}
+                <div class="spicy">{% include "partials/svg/svg-spicy.njk" %}</div>
+                <div class="spicy">{% include "partials/svg/svg-spicy.njk" %}</div>
+                <div class="spicy">{% include "partials/svg/svg-spicy.njk" %}</div>
+              {% endif %}
+            </div>
+          {% endif %}
+
+          <div class="c-card__info">
+            <p class="c-pizza__price 
+                      {% if entry.data.spicy == true%}
+                        c-pizza__price--spicy
+                      {% endif %}">{{ entry.data.price }}</p>
+            <h3 class="c-pizza__name">{{ entry.data.title }}</h3>
+
+            <div class="c-pizza__rating">
+              {% if entry.data.rating == 1 %}
+                <div class="star">{% include "partials/svg/svg-star.njk" %}</div>
+                <div class="star star--false">{% include "partials/svg/svg-star.njk" %}</div>
+                <div class="star star--false">{% include "partials/svg/svg-star.njk" %}</div>
+                <div class="star star--false">{% include "partials/svg/svg-star.njk" %}</div>
+                <div class="star star--false">{% include "partials/svg/svg-star.njk" %}</div>
+              {% elif entry.data.rating == 2 %}
+                <div class="star">{% include "partials/svg/svg-star.njk" %}</div>
+                <div class="star">{% include "partials/svg/svg-star.njk" %}</div>
+                <div class="star star--false">{% include "partials/svg/svg-star.njk" %}</div>
+                <div class="star star--false">{% include "partials/svg/svg-star.njk" %}</div>
+                <div class="star star--false">{% include "partials/svg/svg-star.njk" %}</div>
+              {% elif entry.data.rating == 3 %}
+                <div class="star">{% include "partials/svg/svg-star.njk" %}</div>
+                <div class="star">{% include "partials/svg/svg-star.njk" %}</div>
+                <div class="star">{% include "partials/svg/svg-star.njk" %}</div>
+                <div class="star star--false">{% include "partials/svg/svg-star.njk" %}</div>
+                <div class="star star--false">{% include "partials/svg/svg-star.njk" %}</div>
+              {% elif entry.data.rating == 4 %}
+                <div class="star">{% include "partials/svg/svg-star.njk" %}</div>
+                <div class="star">{% include "partials/svg/svg-star.njk" %}</div>
+                <div class="star">{% include "partials/svg/svg-star.njk" %}</div>
+                <div class="star">{% include "partials/svg/svg-star.njk" %}</div>
+                <div class="star star--false">{% include "partials/svg/svg-star.njk" %}</div>
+              {% else %}
+                <div class="star">{% include "partials/svg/svg-star.njk" %}</div>
+                <div class="star">{% include "partials/svg/svg-star.njk" %}</div>
+                <div class="star">{% include "partials/svg/svg-star.njk" %}</div>
+                <div class="star">{% include "partials/svg/svg-star.njk" %}</div>
+                <div class="star">{% include "partials/svg/svg-star.njk" %}</div>
+              {% endif %}
+            </div>
+            <a href="{{ entry.url }}" class="c-card__btn">Commander</a>
+          </div>
+
+        </div>
+      {% endfor %}
+      
+
+    </div>
+    <!-- Script siema -->
+    <script src="/assets/js/siema.min.js"></script>
+    <script src="/assets/js/card-siema.js"></script>
+  </div>
+  
+</main>
