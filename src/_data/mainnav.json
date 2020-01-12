@@ -2,19 +2,19 @@
   {
     "name" : "delivery",
     "label" : "Livraison",
-    "url" : "./index.html#delivery",
+    "url" : "/index.html#delivery",
     "here":false
   },
   {
     "name" : "menu",
     "label" : "Menu",
-    "url" : "./index.html#menu",
+    "url" : "/index.html#menu",
     "here":true
   },
   {
     "name" : "reservation",
     "label" : "Réservation",
-    "url" : "./index.html#reservation",
+    "url" : "/index.html#reservation",
     "here":false
   }
 ]

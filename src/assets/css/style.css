@@ -459,10 +459,15 @@ body{
 	z-index: 99999;
 }
 
-/*openmenu icon become transparent on click*/
-.c-mobilenav__open__icon.is-transparent{
-	opacity: 0;
+/*bug d'affichage !*/
+.c-mobilenav__ham__icon--menu{
+	top: 2.2%;
 }
+
+/*openmenu icon become transparent on click*/
+/* .c-mobilenav__open__icon.is-transparent{
+	opacity: 0;
+} */
 
 /*mobile menu styling*/
 .c-mobilemenu{

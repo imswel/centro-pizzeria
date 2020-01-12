@@ -25,7 +25,11 @@
 
         <nav class="c-siteheader__mobilenav">
           <a class="js-menu">
-            <div class="c-mobilenav__ham__icon">
+            <div class="c-mobilenav__ham__icon
+            {# CORRECTION BUG D'AFFICHAGE #}
+            {% if currentSection ==  'pizza' %}
+              c-mobilenav__ham__icon--menu
+            {% endif %}">
                 {% include "partials/svg/svg-ham.njk" %}
             </div>
           </a>
